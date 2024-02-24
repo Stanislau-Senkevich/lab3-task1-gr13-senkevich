@@ -17,7 +17,9 @@
 ///    second - another string(char*)
 /// Return:
 ///    1, if first string has greater position of "ш"
-///    0, if another
+///    -1, if another
+///    0, if equal
+///    -2, if one or both has no "ш"
 int compare_by_sh_position(wchar_t *first, wchar_t *second);
 
 #endif

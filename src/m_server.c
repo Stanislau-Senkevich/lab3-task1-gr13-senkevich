@@ -31,5 +31,16 @@ int sh_position(wchar_t *str, const wchar_t target) {
 }
 
 int compare_by_sh_position(wchar_t *first, wchar_t *second) {
-  return sh_position(first, L'ш') >= sh_position(second, L'ш') ? 1 : 0;
+  int first_res = sh_position(first, L'ш');
+  int second_res = sh_position(second, L'ш');
+
+  if (first_res == -1 || second_res == -1) {
+    return -2;
+  }
+
+  if (first_res == second_res) {
+    return 0;
+  }
+
+  return first_res > second_res ? 1 : -1;
 }
